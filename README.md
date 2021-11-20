@@ -1,9 +1,8 @@
-# boston-housing-prediction-ml-app :house_with_garden:
+# boston-housing-prediction-streamlit app:
 
  This app predicts housing prices in Boston, and is developed using Python and Streamlit.
 
- App: [Boston Housing Price Prediction] (https://house-price-predict-ml.herokuapp.com/)
- The dataset can be downloaded from [Boston Housing Price Dataset] (https://archive.ics.uci.edu/ml/datasets/Housing)
+App : https://boston-house-price-uncc.herokuapp.com/ 
 
 ## Introduction
 
