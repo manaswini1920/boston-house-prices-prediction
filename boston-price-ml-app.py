@@ -8,8 +8,8 @@ from sklearn.ensemble import RandomForestRegressor
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.write("""
-# Boston House Price Prediction App
-This app predicts the **Boston House Price**!
+# Boston House Price Prediction Streamlit App
+This application predicts the **Boston House Prices**!
 """)
 st.write('---')
 
@@ -23,19 +23,19 @@ Y = pd.DataFrame(boston.target, columns=["MEDV"])
 st.sidebar.header('Specify Input Parameters')
 
 def user_input_features():
-    CRIM = st.sidebar.slider('CRIM', float(X.CRIM.min()), float(X.CRIM.max()), float(X.CRIM.mean()))
-    ZN = st.sidebar.slider('ZN', float(X.ZN.min()), float(X.ZN.max()), float(X.ZN.mean()))
-    INDUS = st.sidebar.slider('INDUS', float(X.INDUS.min()), float(X.INDUS.max()), float(X.INDUS.mean()))
+    CRIM = st.sidebar.slider('CRIME RATE BY TOWN ', float(X.CRIM.min()), float(X.CRIM.max()), float(X.CRIM.mean()))
+    ZN = st.sidebar.slider('Proportion of residential land zoned for lots', float(X.ZN.min()), float(X.ZN.max()), float(X.ZN.mean()))
+    INDUS = st.sidebar.slider('Proportion of non-retail business acres per town', float(X.INDUS.min()), float(X.INDUS.max()), float(X.INDUS.mean()))
     CHAS = st.sidebar.slider('CHAS', float(X.CHAS.min()), float(X.CHAS.max()), float(X.CHAS.mean()))
-    NOX = st.sidebar.slider('NOX', float(X.NOX.min()), float(X.NOX.max()), float(X.NOX.mean()))
-    RM = st.sidebar.slider('RM', float(X.RM.min()), float(X.RM.max()), float(X.RM.mean()))
-    AGE = st.sidebar.slider('AGE', float(X.AGE.min()), float(X.AGE.max()), float(X.AGE.mean()))
-    DIS = st.sidebar.slider('DIS', float(X.DIS.min()), float(X.DIS.max()), float(X.DIS.mean()))
-    RAD = st.sidebar.slider('RAD', float(X.RAD.min()), float(X.RAD.max()), float(X.RAD.mean()))
-    TAX = st.sidebar.slider('TAX', float(X.TAX.min()), float(X.TAX.max()), float(X.TAX.mean()))
-    PTRATIO = st.sidebar.slider('PTRATIO', float(X.PTRATIO.min()), float(X.PTRATIO.max()), float(X.PTRATIO.mean()))
+    NOX = st.sidebar.slider('Nitric oxide concentration', float(X.NOX.min()), float(X.NOX.max()), float(X.NOX.mean()))
+    RM = st.sidebar.slider('Average number of rooms per dwelling', float(X.RM.min()), float(X.RM.max()), float(X.RM.mean()))
+    AGE = st.sidebar.slider('Proportion of owner-occupied units built prior to 1940', float(X.AGE.min()), float(X.AGE.max()), float(X.AGE.mean()))
+    DIS = st.sidebar.slider('Weighted distances to five Boston employment centers', float(X.DIS.min()), float(X.DIS.max()), float(X.DIS.mean()))
+    RAD = st.sidebar.slider('Index of accessibility to radial highways', float(X.RAD.min()), float(X.RAD.max()), float(X.RAD.mean()))
+    TAX = st.sidebar.slider('Full-value property tax rate per $10,000', float(X.TAX.min()), float(X.TAX.max()), float(X.TAX.mean()))
+    PTRATIO = st.sidebar.slider('Pupil-teacher ratio by town', float(X.PTRATIO.min()), float(X.PTRATIO.max()), float(X.PTRATIO.mean()))
     B = st.sidebar.slider('B', float(X.B.min()), float(X.B.max()), float(X.B.mean()))
-    LSTAT = st.sidebar.slider('LSTAT', float(X.LSTAT.min()), float(X.LSTAT.max()), float(X.LSTAT.mean()))
+    LSTAT = st.sidebar.slider('Percentage of lower status of the population', float(X.LSTAT.min()), float(X.LSTAT.max()), float(X.LSTAT.mean()))
     data = {'CRIM': CRIM,
             'ZN': ZN,
             'INDUS': INDUS,
@@ -67,7 +67,7 @@ model.fit(X, Y)
 # Apply Model to Make Prediction
 prediction = model.predict(df)
 
-st.header('Prediction of Median House Price Value (MEDV)')
+st.header('Prediction of Median House Price Value (MEDV) (Median value of owner-occupied homes in USD 1000s)')
 st.write(prediction)
 st.write('---')
 
