@@ -98,7 +98,7 @@ This study aims to find the important factors that affect the house prices in a 
    Training Accuracy - 72% Accuracy
    Testing Accuracy - 73% Accuracy
    
-   From the Exploratory Data Analysis, we could generate insight from the data. How each of the features relates to the target. Also, it can be seen from the evaluation of three    models that Random Forest Regressor performed better than Linear Regression. We have also determined from our Random Forest model the key features that affects the median   housing prices (MEDV) in Boston are 
+   From the Exploratory Data Analysis, we generated insights from the data. How each of the features relates to the target. Also, it can be seen from the evaluation of two    models that Random Forest Regressor performed better than Linear Regression. We have also determined from our Random Forest model the key features that affects the median   housing prices (MEDV) in Boston are 
    (1) LSAT : Percentage of the lower population status 
    
    (2) RM: The average number of rooms per dwelling 
